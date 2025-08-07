@@ -2189,9 +2189,9 @@ function onLoaded() {
     let nodePosInBothCyAndInvisible = [];
     instance.getCompMgrInstance('get').mainGraphManager.nodesMap.forEach((nodeItem, key) => {
       nodesToAddInvisible.push({ data: { id: nodeItem.ID , visible : nodeItem.isVisible?'T':"F", filtered : nodeItem.isFiltered?'T':"F", hidden : nodeItem.isHidden?'T':"F", label: (document.getElementById("cbk-flag-display-node-labels").checked ? 
-            (node.data('label') ? 
-              (node.data('label').length > 5 ? node.data('label').substring(0, 5) + '...' : node.data('label')) : 
-              (node.id().length > 5 ? node.id().substring(0, 5) + '...' : node.id())) : 
+            (nodeItem.ID ? 
+              (nodeItem.ID.length > 5 ? nodeItem.ID.substring(0, 5) + '...' : nodeItem.ID) : 
+              (nodeItem.ID.length > 5 ? nodeItem.ID.substring(0, 5) + '...' : nodeItem.ID)) : 
             '') + (nodeItem.isFiltered ? "(f)" : "") + (nodeItem.isHidden ? "(h)" : "") + (nodeItem.isCollapsed ? "(-)" : "") + (nodeItem.isVisible ? "" : "(i)"), parent: instance.getCompMgrInstance().visibleGraphManager.rootGraph === nodeItem.owner ? null : nodeItem.owner.parent.ID }});
     });
     cyInvisible.add(nodesToAddInvisible);
