@@ -2375,7 +2375,7 @@ function onLoaded() {
     var focusNodeWidth = boundingBox.w;
     var fcousNodeHeight = boundingBox.h;
 
-    cyLayout.nodes().forEach(node => {node.style('label', node.id());})
+    cyLayout.nodes().forEach(node => {node.style('label', node.id().length > 5 ? node.id().substring(0, 5) + '...' : node.id());})
     radioButtons.forEach(function(radio) {
       if(radio.checked){
         setLabelPosition(radio.value);
