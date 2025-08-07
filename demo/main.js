@@ -2282,7 +2282,7 @@ function onLoaded() {
       group: 'nodes',
       data: { id: focusID, 
               parent: null,
-              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? focusID : ''
+              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (focusID.length > 5 ? focusID.substring(0, 5) + '...' : focusID) : ''
        }}
     )
     fNode.style({'background-color': '#CCE1F9',})
@@ -2293,7 +2293,7 @@ function onLoaded() {
           group: 'nodes',
           data: { id: node.ID, 
                   parent: node.owner.parent.ID,
-                  'label' : document.getElementById("cbk-flag-display-node-labels").checked ? node.ID : ''
+                  'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (node.ID.length > 5 ? node.ID.substring(0, 5) + '...' : node.ID) : ''
             }});
 
       }else{
@@ -2301,7 +2301,7 @@ function onLoaded() {
           group: 'nodes',
           data: { id: node.ID, 
                   parent: node.owner.parent.ID,
-                  'label' : document.getElementById("cbk-flag-display-node-labels").checked ? node.ID : ''
+                  'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (node.ID.length > 5 ? node.ID.substring(0, 5) + '...' : node.ID) : ''
            }})
       }
 
@@ -2317,7 +2317,7 @@ function onLoaded() {
         group: 'nodes',
         data: { id: node.ID, 
                 parent: node.owner.parent.ID,
-                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? node.ID : ''
+                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (node.ID.length > 5 ? node.ID.substring(0, 5) + '...' : node.ID) : ''
               }});
           
          }catch(e){
