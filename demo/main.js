@@ -2423,7 +2423,7 @@ function onLoaded() {
               newNode.style({
                 'width': Math.max(width,height), // Set the new width of the node
                 'height': Math.max(width,height), // Set the new height of the node
-                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? newNode.data().id : ''
+                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (newNode.data().id.length > 5 ? newNode.data().id.substring(0, 5) + '...' : newNode.data().id) : ''
               });
               
               cy.nodes().unselect();
@@ -2443,7 +2443,7 @@ function onLoaded() {
         'width': Math.max(focusNodeWidth,fcousNodeHeight)+'px', // Set the new width of the node
         'height': Math.max(focusNodeWidth,fcousNodeHeight)+'px',// Set the new height of the node
         'background-color': '#CCE1F9',
-        'label' : document.getElementById("cbk-flag-display-node-labels").checked ? focusNode.data().id : ''
+        'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (focusNode.data().id.length > 5 ? focusNode.data().id.substring(0, 5) + '...' : focusNode.data().id) : ''
       });
     }else{
       var newNode = cyLayout.add({
@@ -2460,7 +2460,7 @@ function onLoaded() {
         y: topLevelFocusParent.position().y
       });
       newNode.style({
-        'label' : document.getElementById("cbk-flag-display-node-labels").checked ? newNode.data().id : ''
+        'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (newNode.data().id.length > 5 ? newNode.data().id.substring(0, 5) + '...' : newNode.data().id) : ''
       });
       compoundsCounter++;
 
@@ -2498,7 +2498,7 @@ function onLoaded() {
                   newNode.style({
                     'width': Math.max(width,height)+'px', // Set the new width of the node
                     'height': Math.max(width,height)+'px', // Set the new height of the node
-                    'label' : document.getElementById("cbk-flag-display-node-labels").checked ? newNode.data().id : ''
+                    'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (newNode.data().id.length > 5 ? newNode.data().id.substring(0, 5) + '...' : newNode.data().id) : ''
                   });
                   compoundsCounter++;
           }else{
@@ -2518,7 +2518,7 @@ function onLoaded() {
                 'width': Math.max(focusNodeWidth,fcousNodeHeight)+'px', // Set the new width of the node
                 'height': Math.max(focusNodeWidth,fcousNodeHeight)+'px', // Set the new height of the node
                 'background-color':'#CCE1F9',
-                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? newFNode.data().id : ''
+                'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (newFNode.data().id.length > 5 ? newFNode.data().id.substring(0, 5) + '...' : newFNode.data().id) : ''
               });
               compoundsCounter++;
         }
