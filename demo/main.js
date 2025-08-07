@@ -2410,7 +2410,7 @@ function onLoaded() {
                 group: 'nodes',
                 data: {
                   id: node.id(),
-                  label: node.id()
+                  label: node.id().length > 5 ? node.id().substring(0, 5) + '...' : node.id() 
                 },
               });
         
@@ -2450,7 +2450,7 @@ function onLoaded() {
         group: 'nodes',
         data: {
           id: topLevelFocusParent.id(),
-          label: topLevelFocusParent.id()
+          label: topLevelFocusParent.id().length > 5 ? topLevelFocusParent.id().substring(0, 5) + '...' : topLevelFocusParent.id()
         },
       });
 
