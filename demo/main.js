@@ -2333,8 +2333,8 @@ function onLoaded() {
           
           cyLayout.add({
             group: 'nodes',
-            data: { id: edge.source.ID, 
-              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? edge.source.ID : ''
+            data: { id: edge.source.ID,
+              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (edge.source.ID.length > 5 ? edge.source.ID.substring(0, 5) + '...' : edge.source.ID) : ''
             }});
             
         }else if(cyLayout.getElementById(edge.target.ID).length == 0){
@@ -2342,7 +2342,7 @@ function onLoaded() {
           cyLayout.add({
             group: 'nodes',
             data: { id: edge.target.ID, 
-              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? edge.target.ID : ''
+              'label' : document.getElementById("cbk-flag-display-node-labels").checked ? (edge.target.ID.length > 5 ? edge.target.ID.substring(0, 5) + '...' : edge.target.ID) : ''
             }});
             
         }
