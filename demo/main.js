@@ -15,7 +15,13 @@ function onLoaded() {
       {
         selector: 'node',
         style: {
-          'label': 'data(id)',
+          'label': (node) => {
+            return document.getElementById("cbk-flag-display-node-labels").checked ? 
+            (node.data('label') ? 
+              (node.data('label').length > 5 ? node.data('label').substring(0, 5) + '...' : node.data('label')) : 
+              (node.id().length > 5 ? node.id().substring(0, 5) + '...' : node.id())) : 
+            '';
+          },
           "color" : "black",
           'font-size': '20px',
           'compound-sizing-wrt-labels': 'include',
@@ -57,7 +63,13 @@ function onLoaded() {
       {
         selector: 'node',
         style: {
-          'label': 'data(label)',
+          'label': (node) => {
+            return document.getElementById("cbk-flag-display-node-labels").checked ? 
+            (node.data('label') ? 
+              (node.data('label').length > 5 ? node.data('label').substring(0, 5) + '...' : node.data('label')) : 
+              (node.id().length > 5 ? node.id().substring(0, 5) + '...' : node.id())) : 
+            '';
+          },
           "color" : "black",
           'font-size': '20px',
           'compound-sizing-wrt-labels': 'include',
